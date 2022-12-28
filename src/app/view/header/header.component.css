@@ -1,0 +1,8 @@
+span:hover {
+  cursor: pointer;
+}
+
+.mat-badge-content {
+  background: blue !important;
+  color: white !important;
+}

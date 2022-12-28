@@ -1,0 +1,5 @@
+<mat-toolbar>
+  <span (click)="openProducts()" style="font-family: 'Brush Script MT', cursive; font-size: 4rem;">Savoir</span>
+  <button mat-raised-button (click)="openCart()"><mat-icon [matBadge]="countProducts$ | async">shopping_cart</mat-icon></button>
+  <span>Total: {{totalPrice$ | async | number : '1.2'}}</span>
+</mat-toolbar>

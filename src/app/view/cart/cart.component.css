@@ -1,0 +1,10 @@
+.myContainer {
+  display: flex;
+  flex-direction: row !important;
+  width: 90%;
+}
+
+mat-card {
+  margin: .5rem;
+  width: 10rem !important;
+}

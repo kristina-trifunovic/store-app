@@ -1,0 +1,11 @@
+<div class="container">
+  <button mat-raised-button color="warn" (click)="clearCart()">Clear Cart</button>
+</div>
+
+<div class="myContainer">
+  <mat-card *ngFor="let productCount of (cartProducts$ | async)">
+    <mat-card-title>{{productCount.product.name}}</mat-card-title>
+    <img mat-card-image [src]="productCount.product.image" [alt]="productCount.product.description">
+    <mat-card-footer>Count: {{productCount.count}}</mat-card-footer>
+  </mat-card>
+</div>
