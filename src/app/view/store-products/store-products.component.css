@@ -1,6 +1,8 @@
 .myContainer {
+  margin: 0 auto;
   display: flex;
   flex-direction: row !important;
+  justify-content: center;
   width: 90%;
 }
 

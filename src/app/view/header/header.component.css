@@ -3,6 +3,19 @@ span:hover {
 }
 
 .mat-badge-content {
-  background: blue !important;
   color: white !important;
+}
+
+mat-toolbar {
+  justify-content: space-between;
+}
+
+.end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.end > button, span {
+  margin: .5rem;
 }

@@ -16,6 +16,7 @@ import { StoreModule } from '@ngrx/store';
 import { cartReducer } from './cart-store/cart.reducer';
 import { CartComponent } from './view/cart/cart.component';
 import { DecimalPipe } from '@angular/common';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { DecimalPipe } from '@angular/common';
     MatBadgeModule,
     MatCardModule,
     BrowserAnimationsModule,
+    MatTableModule,
     StoreModule.forRoot({ cartEntries: cartReducer}) // cartEntries is our state, cartReducer is from cart.reducer.ts
   ],
   providers: [

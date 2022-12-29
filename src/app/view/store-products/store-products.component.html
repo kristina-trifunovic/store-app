@@ -1,5 +1,5 @@
 <div class="myContainer">
-  <mat-card *ngFor="let product of products">
+  <mat-card *ngFor="let product of products" style="text-align: center;">
     <mat-card-content></mat-card-content>
     <img mat-card-image [src]="product.image" [alt]="product.description">
     <mat-card-title><span>{{product.name}}</span></mat-card-title>

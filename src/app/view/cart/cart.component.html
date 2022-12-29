@@ -1,11 +1,42 @@
-<div class="container">
+<div>
   <button mat-raised-button color="warn" (click)="clearCart()">Clear Cart</button>
 </div>
 
-<div class="myContainer">
+<!-- <div class="myContainer">
   <mat-card *ngFor="let productCount of (cartProducts$ | async)">
     <mat-card-title>{{productCount.product.name}}</mat-card-title>
     <img mat-card-image [src]="productCount.product.image" [alt]="productCount.product.description">
     <mat-card-footer>Count: {{productCount.count}}</mat-card-footer>
   </mat-card>
+</div> -->
+
+<div>
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="image">
+      <mat-header-cell *matHeaderCellDef> Image </mat-header-cell>
+      <mat-cell *matCellDef="let product"><img [src]="product.product.image"> </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{product.product.name}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{product.product.price * product.count | number : '1.2'}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="count">
+      <mat-header-cell *matHeaderCellDef> Count </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{product.count}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+    <mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></mat-row>>
+
+    <tr class="mat-row" style="width:100%;display:table" *matNoDataRow>
+      <td class="mat-cell" style="vertical-align: middle;text-align: center;">Nothing in the cart yet.</td>
+    </tr>
+  </mat-table>
 </div>
