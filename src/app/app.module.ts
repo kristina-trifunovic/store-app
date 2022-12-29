@@ -17,6 +17,7 @@ import { cartReducer } from './cart-store/cart.reducer';
 import { CartComponent } from './view/cart/cart.component';
 import { DecimalPipe } from '@angular/common';
 import {MatTableModule} from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {MatTableModule} from '@angular/material/table';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     NgbModule,
     MatToolbarModule,
