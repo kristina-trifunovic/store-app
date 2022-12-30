@@ -18,6 +18,7 @@ import { CartComponent } from './view/cart/cart.component';
 import { DecimalPipe } from '@angular/common';
 import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     BrowserAnimationsModule,
     MatTableModule,
+    MatPaginatorModule,
     StoreModule.forRoot({ cartEntries: cartReducer}) // cartEntries is our state, cartReducer is from cart.reducer.ts
   ],
   providers: [

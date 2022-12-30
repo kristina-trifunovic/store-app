@@ -1,5 +1,5 @@
 <div class="myContainer">
-  <mat-card *ngFor="let product of products" style="text-align: center;">
+  <mat-card *ngFor="let product of pageListProducts" style="text-align: center;">
     <mat-card-content></mat-card-content>
     <img mat-card-image [src]="product.image" [alt]="product.description">
     <mat-card-title><span>{{product.name}}</span></mat-card-title>
@@ -14,3 +14,10 @@
     </mat-card-actions>
   </mat-card>
 </div>
+<mat-paginator *ngIf="products && pageListProducts"
+                   style="background-color: transparent;"
+                   [length]="products.length"
+                   [pageSize]="pageListProducts.length"
+                   [pageSizeOptions]="[5, 10, 25, 100]"
+                   (page)="emitPageEvent($event)">
+</mat-paginator>

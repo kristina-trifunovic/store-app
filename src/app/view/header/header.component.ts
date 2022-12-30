@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
   }
 
   openProducts() {
-    this.router.navigate(['products']);
+    this.router.navigate(['']);
   }
 
   openCart() {

@@ -5,7 +5,8 @@ import { StoreProductsComponent } from './view/store-products/store-products.com
 
 const routes: Routes = [
   {
-    path: 'products',
+    path: '',
+    pathMatch: 'full',
     component: StoreProductsComponent
   },
   {
