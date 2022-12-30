@@ -31,7 +31,6 @@ export class StoreProductsComponent implements OnInit {
   }
 
   emitPageEvent(event: PageEvent) {
-    console.log('event', event);
     let start = event.pageIndex === 0 ? 0 : event.pageIndex * 5 + 1;
     let end = event.pageSize + start;
     this.pageListProducts = this.products?.slice(start, end);
