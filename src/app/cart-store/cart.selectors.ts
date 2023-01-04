@@ -5,7 +5,8 @@ import { Product } from "../model/product.model";
 export const selectCountProducts = createSelector(
   createFeatureSelector('cartEntries'), // this means that selector is applied to our cartEntries state from app.module file
   (state: Product[]) => {
-    return state.length;
+    let products: Product[] = JSON.parse(sessionStorage.getItem('products')!);
+    return products.length;
   }
 );
 
@@ -13,7 +14,9 @@ export const selectTotalPrice = createSelector(
   createFeatureSelector('cartEntries'),
   (state: Product[]) => {
     let totalPrice = 0;
-    state.forEach(product => totalPrice += product.price)
+    // state.forEach(product => totalPrice += product.price)
+    let products: Product[] = JSON.parse(sessionStorage.getItem('products')!);
+    products.forEach(product => totalPrice += product.price);
     return totalPrice;
   }
 );

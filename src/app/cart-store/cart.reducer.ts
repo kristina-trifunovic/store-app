@@ -7,11 +7,15 @@ export const initialCartEntries: Product[] = [];
 export const cartReducer = createReducer(
   initialCartEntries,
   on(clearCart, _ => []),
+  
   on(addProduct, (entries, product) => {
-    const entriesClone: Product[] = JSON.parse(JSON.stringify(entries));
+    // const entriesClone: Product[] = JSON.parse(JSON.stringify(entries));
     // const entriesClone: Product[] = entries;
-    entriesClone.push(product);
-    return entriesClone;
+    // entriesClone.push(product);
+    let products: Product[] = JSON.parse(sessionStorage.getItem('products')!);
+    products.push(product);
+    sessionStorage.setItem('products', JSON.stringify(products));
+    return products;
   }),
 
   on(removeProduct, (entries, product) => {
